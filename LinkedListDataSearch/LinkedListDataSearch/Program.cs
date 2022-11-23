@@ -73,40 +73,15 @@ namespace LinkedListDataSearch
         }
         public static bool Search(block s1, int ara, int capacity)
         {
-            block sp = first;
-			block last = null;
-			block tmp = null;
-			int sayaç = 0;
-			while (sp != null)
-			{
-				tmp = sp;
-				sp = sp.next;
-				while (sp != null)
-				{
-					if (tmp.data == sp.data && sayaç < capacity)//aynılar arka arkaya gelir ama max linked len i kadar
-					{
-
-						last = sp;
-						sp.next = sp;
-						sp.next.prev = last;
-						Console.WriteLine("aynı elemandan listede bulundu ve silindi");
-						sayaç += 1;
-					}
-					sp = sp.next;
-				}
-			}
-            
-            
-            
-            int x = capacity / 10;//35 kabulüyle x=3;
-            int y = capacity % 10; // y=5
+              int Onluk = capacity / 10;//35 kabulüyle x=3;
+            int Birlik = capacity % 10; // y=5
 
             int veri;
             bool sonuc = false;
             block sc = first;
             if (sonuc == false)
             {
-                for (int i = 0; i < x; i++)
+                for (int i = 0; i < Onluk; i++)
                 {
                     for (int j = 0; j < 10; j++) sc = sc.next;
                     veri = sc.data;
@@ -126,9 +101,9 @@ namespace LinkedListDataSearch
                     }
                 }
 
-                if (y > 0)
+                if (Birlik > 0)
                 {
-                    for (int k = 0; k < y; k++)
+                    for (int k = 0; k < Birlik; k++)
                     {
                         if (ara == sc.data) return true;
                         sc = sc.next;
